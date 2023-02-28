@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="https://www.google.com/search?q=HTML">Recherche HTML</a>
+  <a href="https://www.google.com/search?q=CSS">Recherche CSS</a>
+  <a href="https://www.google.com/search?q=JavaScript">Recherche JavaScript</a>
+
+  <!-- Formulaire de recherche -->
+  <form action="https://www.google.com/search">
+    <input type="text" name="q">
+    <button>Google</button>
+  </form>
+
+  <!-- Formulaire de login -->
+  <form action="/login" method="post">
+    <div>
+      <input type="text" placeholder="Username">
+    </div>
+    <div>
+      <input type="password" placeholder="Password">
+    </div>
+    <div>
+      <button>Login</button>
+    </div>
+  </form>
+
+  <!-- Formulaire d'inscription -->
+  <form action="/register" method="post">
+    <div>
+      <label for="name">Name</label> : <input type="text" id="name">
+    </div>
+    <div>
+      <label for="birthday">Birthday</label> : <input type="date" id="birthday">
+    </div>
+    <div>
+      <label>Newsletter : <input type="checkbox"></label>
+    </div>
+    <div>
+      Choix :
+      <label>Oui<input type="radio" name="choix" value="yes"></label>
+      <label>Non<input type="radio" name="choix" value="no"></label>
+    </div>
+    <div>
+      <label>
+        Choix avec select :
+        <select name="choix">
+          <option value="yes">Oui</option>
+          <option value="no">Non</option>
+        </select>
+      </label>
+    </div>
+    <div>
+      Loisirs :
+      <label>Sport<input type="checkbox" name="loisirs" value="sport"></label>
+      <label>Musique<input type="checkbox" name="loisirs" value="music"></label>
+      <label>Cinéma<input type="checkbox" name="loisirs" value="cinema"></label>
+    </div>
+    <div>
+      <label>
+        Loisirs avec select :
+        <select name="loisirs" multiple>
+          <option value="sport">Sport</option>
+          <option value="music">Musique</option>
+          <option value="cinema">Cinéma</option>
+        </select>
+      </label>
+    </div>
+  </form>
+
+  <!-- Formulaire Commentaire (modification)-->
+  <form>
+    <div>
+      <input type="text" name="title" value="Mon super titre">
+    </div>
+    <div>
+      Publié : <input type="checkbox" name="active" checked>
+    </div>
+    <div>
+      <label>
+        Choix avec select :
+        <select name="choix">
+          <option value="yes">Oui</option>
+          <option value="no" selected>Non</option>
+        </select>
+      </label>
+    </div>
+    <div>
+      <!-- Attention à textarea, les espaces avant ou après la valeur
+       sont préservé (donc son dans le commentaire dans cet exemple) -->
+      <textarea name="comment">Mon commentaire</textarea>
+    </div>
+  </form>
+</body>
+</html>
