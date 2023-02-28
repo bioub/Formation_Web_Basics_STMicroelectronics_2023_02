@@ -1,48 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <header>
-    <h1>Titre</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus delectus non laborum enim ipsam cupiditate qui, beatae corrupti repellendus odio veniam nam excepturi velit illo maxime repellat soluta quis at.</p>
-  </header>
-  <div>
-    <h2>Titre</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus delectus non laborum enim ipsam cupiditate qui, beatae corrupti repellendus odio veniam nam excepturi velit illo maxime repellat soluta quis at.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus delectus non laborum enim ipsam cupiditate qui, beatae corrupti repellendus odio veniam nam excepturi velit illo maxime repellat soluta quis at.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus delectus non laborum enim ipsam cupiditate qui, beatae corrupti repellendus odio veniam nam excepturi velit illo maxime repellat soluta quis at.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus delectus non laborum enim ipsam cupiditate qui, beatae corrupti repellendus odio veniam nam excepturi velit illo maxime repellat soluta quis at.</p>
-  </div>
-  <section>
-    <nav>
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </nav>
-  </section>
-  <section>
-    <h2>Titre</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus delectus non laborum enim ipsam cupiditate qui, beatae corrupti repellendus odio veniam nam excepturi velit illo maxime repellat soluta quis at.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus delectus non laborum enim ipsam cupiditate qui, beatae corrupti repellendus odio veniam nam excepturi velit illo maxime repellat soluta quis at.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus delectus non laborum enim ipsam cupiditate qui, beatae corrupti repellendus odio veniam nam excepturi velit illo maxime repellat soluta quis at.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus delectus non laborum enim ipsam cupiditate qui, beatae corrupti repellendus odio veniam nam excepturi velit illo maxime repellat soluta quis at.</p>
-  </section>
-  <div>
-    <img src="image.png">
-    <img src="image.jpg">
-    <img src="logo.png">
-  </div>
-  <div>
-    <nav>
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </nav>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* * {
+      border: 1px solid red;
+      padding: 4px;
+    } */
+
+      /* p {
+      border: 1px solid red;
+      padding: 4px;
+    } */
+
+      /*
+    #links {
+      border: 1px solid red;
+      padding: 4px;
+    }
+
+    #content {
+      border: 1px solid red;
+      padding: 4px;
+    }
+    */
+      /* #links, #content {
+      border: 1px solid red;
+      padding: 4px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      border: 1px solid red;
+      padding: 4px;
+    } */
+
+      /* section.important {
+      border: 1px solid red;
+      padding: 4px;
+    } */
+
+      /* <section id="links" class="important text"> */
+      /* section#links.important.text {
+      border: 1px solid red;
+      padding: 4px;
+    } */
+
+      /* section a {
+      border: 1px solid red;
+      padding: 4px;
+    } */
+
+      /* #links a {
+      border: 1px solid red;
+      padding: 4px;
+    } */
+
+      /* .important a {
+      border: 1px solid red;
+      padding: 4px;
+    } */
+
+      /* <div class="important"> */
+      /* la ou les balises div qui ont la classe important */
+      /* div.important {
+        border: 1px solid red;
+      padding: 4px;
+      } */
+
+      /* <div> <span class="important"></span> </div> */
+      /* la ou les balises qui ont la classe important descendantes d'un div */
+      /* div .important {
+        border: 1px solid red;
+      padding: 4px;
+      } */
+
+      /* div * {
+        border: 1px solid red;
+        padding: 4px;
+      } */
+
+      /* tous les enfants de body (mais pas les petits-enfants et ainsi de suite) */
+      /* body > * {
+        border: 1px solid red;
+        padding: 4px;
+      } */
+
+      /* ne sélectionne que la balise qui a classe important et dont le parent est body */
+      /* body > .important {
+        border: 1px solid red;
+        padding: 4px;
+      } */
+
+      /* le paragraphe qui arrive juste après le h2 (mais ont le meme parent) */
+      /* h2 + p {
+        border: 1px solid red;
+        padding: 4px;
+      } */
+
+      /* le paragraphe qui arrive après le h2 (mais ont le meme parent) */
+      /* h2 ~ p {
+        border: 1px solid red;
+        padding: 4px;
+      } */
+
+      /* section ~ div {
+
+      } */
+
+
+      /* un lien qui est 2e fils (de n'importe quel élément) */
+      a:nth-child(2) {
+
+      }
+
+      /* un lien qui est 2e fils d'une balise nav */
+      nav > a:nth-child(2) {
+
+      }
+
+      /* le 2e fils d'une balise nav */
+      nav > :nth-child(2) {
+
+      }
+
+      /* la balise div 2e fils de n'importe quel élément */
+      div:nth-child(2) {
+
+      }
+
+      /* la 2e balise de type div fils de n'importe quel élément */
+      div:nth-of-type(2) {
+
+      }
+
+
+      /* tous les liens de la section links sauf le premier */
+      #links a + a {
+
+      }
+
+      /* tous les liens de la section links sauf le dernier */
+      #links a:not(:last-child) {
+        
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Titre</h1>
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        delectus non laborum enim ipsam cupiditate qui, beatae corrupti
+        repellendus odio veniam nam excepturi velit illo maxime repellat soluta
+        quis at.
+      </p>
+    </header>
+    <div>
+      <h2>Titre</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        delectus non laborum enim ipsam cupiditate qui, beatae corrupti
+        repellendus odio veniam nam excepturi velit illo maxime repellat soluta
+        quis at.
+      </p>
+      <p class="important text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        delectus non laborum enim ipsam cupiditate qui, beatae corrupti
+        repellendus odio veniam nam excepturi velit illo maxime repellat soluta
+        quis at.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        delectus non laborum enim ipsam cupiditate qui, beatae corrupti
+        repellendus odio veniam nam excepturi velit illo maxime repellat soluta
+        quis at.
+      </p>
+      <p class="important">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        delectus non laborum enim ipsam cupiditate qui, beatae corrupti
+        repellendus odio veniam nam excepturi velit illo maxime repellat soluta
+        quis at.
+      </p>
+    </div>
+    <section id="links" class="important text">
+      <nav>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </nav>
+    </section>
+    <section id="content">
+      <h2>Titre</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        delectus non laborum enim ipsam cupiditate qui, beatae corrupti
+        repellendus odio veniam nam excepturi velit illo maxime repellat soluta
+        quis at.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        delectus non laborum enim ipsam cupiditate qui, beatae corrupti
+        repellendus odio veniam nam excepturi velit illo maxime repellat soluta
+        quis at.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        delectus non laborum enim ipsam cupiditate qui, beatae corrupti
+        repellendus odio veniam nam excepturi velit illo maxime repellat soluta
+        quis at.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        delectus non laborum enim ipsam cupiditate qui, beatae corrupti
+        repellendus odio veniam nam excepturi velit illo maxime repellat soluta
+        quis at.
+      </p>
+    </section>
+    <div>
+      <img src="image.png" />
+      <img src="image.jpg" />
+      <img src="logo.png" />
+    </div>
+    <div>
+      <nav>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </nav>
+    </div>
+  </body>
 </html>
