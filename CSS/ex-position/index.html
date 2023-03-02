@@ -51,7 +51,7 @@
 
       .container-aside-main {
         display: flex;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
       }
 
       aside {
@@ -67,6 +67,14 @@
         margin: 10px 0;
         color: white;
         text-decoration: none;
+        /* transition-property: background-color;
+        transition-duration: 1500ms;
+        transition-timing-function: ease; */
+        transition: background-color 400ms ease;
+      }
+
+      .menu-left a:hover {
+        background-color: red;
       }
 
       main {
@@ -88,12 +96,20 @@
         content: ' > ';
       }
 
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
       .gallery__img {
         background-color: orange;
-        display: inline-block;
-        width: 30%;
+        /* display: inline-block; */
+        width: 31%;
+        /* width: calc(33.33%-(3*10px)/2); */
+        /* flex: 1; */
         height: 100px;
-        margin-bottom: 4px;
+        /* margin-bottom: 4px; */
       }
     </style>
   </head>

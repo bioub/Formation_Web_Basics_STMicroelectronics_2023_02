@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      /* grid-template-rows: 100px 1fr; */
+      grid-template-columns: 200px 1fr;
+      grid-auto-rows: 100px;
+      gap: 10px
+    }
+
+    .yellow {
+      background-color: yellow;
+      grid-row-start: 1;
+      grid-row-end: span 2;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="yellow"></div>
+    <div class="red"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+  </div>
+</body>
+</html>

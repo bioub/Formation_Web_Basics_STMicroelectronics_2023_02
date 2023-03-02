@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <style media="print">
+    nav {
+      display: none;
+    }
+  </style> -->
+  <style>
+    @media print {
+      nav {
+        display: none;
+      }
+    }
+    @media (orientation: portrait) {
+      .portrait {
+        background-color: yellow;
+      }
+    }
+    @media (orientation: landscape) {
+      .paysage {
+        background-color: yellow;
+      }
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </nav>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum inventore cumque in iure magni libero dolores sapiente consequuntur placeat officia odio autem animi velit, impedit possimus error molestias laborum perferendis.</p>
+  <p>Ducimus quibusdam labore aut aspernatur maiores quis nesciunt esse libero quisquam error beatae numquam vel nisi ullam dolores fuga quidem quasi, necessitatibus cumque doloremque vero amet perspiciatis? Asperiores, quibusdam dolorem.</p>
+  <p>Sed non enim explicabo id placeat! Nihil earum, temporibus amet iusto officia dolor sunt praesentium, eum eius error possimus, quod a quidem eligendi nobis quam officiis harum consequatur quisquam cum.</p>
+  <p>Nobis maiores odit eum deserunt mollitia in atque nostrum ea. Earum autem quos illum ipsam distinctio quam deserunt consectetur? Atque, id. Quod quis ipsa vel quibusdam veritatis quidem obcaecati voluptatum?</p>
+  <p>Eos rem consectetur numquam debitis hic at corrupti voluptatem qui culpa amet ipsum cumque explicabo nihil maxime, quam iste nobis maiores suscipit natus laudantium iusto expedita? Voluptatibus ad quisquam cumque!</p>
+  <p class="portrait">
+    Portrait
+  </p>
+  <p class="paysage">
+    Paysage
+  </p>
+</body>
+</html>
