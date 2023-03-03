@@ -40,3 +40,5 @@ function externe() {
   }
   interne();
 }
+
+externe();
