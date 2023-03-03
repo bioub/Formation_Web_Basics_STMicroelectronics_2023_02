@@ -17,3 +17,5 @@ console.log(123 === '123'); // false
 
 // Opérateur ** (ES2016)
 console.log(2 ** 3); // 2 * 2 * 2
+// avant 2015
+console.log(Math.pow(2, 3)); // 8

@@ -1,7 +1,7 @@
 // NaN: Not a Number
 // valeur de type number
 
-// résultat d'une opérateur impossible
+// résultat d'une opération impossible
 console.log(Math.sqrt(-1)); // NaN
 console.log(Number('abc')); // NaN
 
