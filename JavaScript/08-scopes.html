@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--
+    Exemple (plutôt legacy) de plusieurs balise script :
+    <script src="08-scopes.js"></script>
+    <script>
+      console.log(varFile); // on a accès à varFile car elle est globale
+    </script>
+  -->
+
+  <!--
+    Exemple (moderne) de plusieurs balise script avec les modules ECMAScript (ESM):
+  -->
+    <script src="08-scopes.js" type="module"></script>
+    <script>
+      console.log(varFile); // erreur : varFile n'est plus globale
+    </script>
+</head>
+<body>
+
+</body>
+</html>
