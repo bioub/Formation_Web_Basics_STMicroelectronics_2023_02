@@ -114,3 +114,15 @@ console.log('user1.hasOwnProperty("hello")', user1.hasOwnProperty("hello")); // 
 
 
 user2.specificName = 'Test'; // que dans user2
+
+
+// héritage
+class Admin extends User {
+  constructor(name, roles) {
+    super(name);
+    this.roles = roles;
+  }
+  hello() {
+    return super.hello() + ', my roles are ' + this.roles;
+  }
+}
