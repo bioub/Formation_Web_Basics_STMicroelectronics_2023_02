@@ -78,15 +78,39 @@ const coordsB = {
 // use cases : constructor -> class
 // le reste, les objets créés (potentiellement) plusieurs fois et qui ont des méthodes
 
-class User {
+// Sucre syntaxiquement
+// Nouvelle syntaxe ES2015
+// class User { }
 
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+  hello() {
+    return `Hello ${this.name}`;
+  }
 }
 
-// function User() {
 
+// function User(name) {
+//   this.name = name;
 // }
 
-const user1 = new User();
+// User.prototype.hello = function() {
+//   return `Hello ${this.name}`;
+// }
+
+// Object.prototype.toString
+
+const user1 = new User('Romain');
+const user2 = new User('Toto');
 
 console.log('typeof user1', typeof user1); // object
 console.log('typeof User', typeof User); // function
+console.log('user1.name', user1.name); // Romain
+console.log('user1.hello()', user1.hello()); // Hello Romain
+console.log('user1.hasOwnProperty("name")', user1.hasOwnProperty("name")); // true
+console.log('user1.hasOwnProperty("hello")', user1.hasOwnProperty("hello")); // false
+
+
+user2.specificName = 'Test'; // que dans user2
