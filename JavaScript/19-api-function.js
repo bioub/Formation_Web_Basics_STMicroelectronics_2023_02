@@ -17,6 +17,7 @@ function hello(p1, p2) {
 
 hello.call(user, 'Toto', 'Titi');
 hello.apply(user, ['Toto', 'Titi']);
+hello.call(user, ...['Toto', 'Titi']);
 
 const helloUser = hello.bind(user);
 helloUser('Toto', 'Titi');

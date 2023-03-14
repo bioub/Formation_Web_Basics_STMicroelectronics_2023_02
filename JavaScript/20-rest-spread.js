@@ -16,7 +16,7 @@ console.log(sum(1, 2, 3, 4));
 // de valeurs
 // ici 3, 4 se transforme en [3, 4]
 
-// SPREAD
+// SPREAD operator
 // (... au moment de lire la variable)
 // la conversion inverse
 // Conversion syntaxique d'un tableau de valeurs
@@ -39,6 +39,7 @@ const cloneNbs = [...nbs];
 
 // Modifier le tableau de façon immuable (en créant
 // un nouveau tableau)
+// en muable nbs.push(5);
 const newNbs = [...nbs, 5];
 
 // Depuis 2018

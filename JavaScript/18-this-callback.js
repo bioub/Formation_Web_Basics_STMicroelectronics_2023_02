@@ -14,6 +14,12 @@
 //   }
 // }
 
+// ^
+// |
+// |[setTimeout]
+// |[helloAsync] ⟳               [callbackTimeout]
+// +-----------------------------1000
+
 // Solution historique: utiliser la portée de closure
 // pour sauvegarder this
 // class User {

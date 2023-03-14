@@ -26,6 +26,11 @@ console.log(Object.keys(coords)); // ['x', 'y']; -> pas z car non enumerable
 console.log(Object.values(coords)); // [1, 2]; -> pas z car non enumerable
 console.log(Object.entries(coords)); // [['x', 1], ['y', 2]]; -> pas z car non enumerable
 
+// Boucle moderne pour boucler sur les objets
+for (const [key, value] of Object.entries(coords)) {
+  console.log(key, value);
+}
+
 // 1 méthode pour convertir un tableau en objet
 console.log(Object.fromEntries([['x', 1], ['y', 2]]));
 
