@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <p>
+      Firstname: <input type="text" name="firstName">
+    </p>
+    <p>
+      Lastname: <input type="text" name="lastName">
+    </p>
+  </form>
+  <script>
+    const user = {
+
+    };
+
+    const formEl = document.querySelector('form');
+    formEl.addEventListener('focusout', (event) => {
+      user[event.target.name] = event.target.value;
+      console.log(user);
+    });
+
+    // const inputEls = document.querySelectorAll('input');
+    // const eventNames = ['beforeinput', 'input', 'focus', 'blur'];
+
+    // for (const inputEl of inputEls) {
+    //   inputEl.addEventListener('blur', () => {
+    //     user[inputEl.name] = inputEl.value;
+    //     console.log(user);
+    //   })
+    //   // for (const eventName of eventNames) {
+    //   //   inputEl.addEventListener(eventName, (event) => {
+    //   //     console.log(inputEl.name, event);
+    //   //     // Empêche la saisie de chiffres
+    //   //     if (eventName === 'beforeinput' && event.data.match(/\d/)) {
+    //   //       event.preventDefault();
+    //   //     }
+    //   //   });
+    //   // }
+    // }
+  </script>
+</body>
+</html>
