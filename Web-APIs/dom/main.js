@@ -14,6 +14,18 @@ Sélectionner et ecouter le clic de la checkbox du formulaire
 Au clic cocher ou décocher toutes les checkbox
 créées dans l'exercice 1 (celles dans divEl)
 */
+/** @type {HTMLInputElement} */
+const toggleEl = document.querySelector('.todos-toggle-checked');
+
+toggleEl.addEventListener('click', () => {
+  // document.querySelectorAll('.todos-container input[type=checkbox]')
+  /** @type {NodeListOf<HTMLInputElement>} */
+  const checkboxEls = document.querySelectorAll('.todos-completed');
+
+  for (const checkboxEl of checkboxEls) {
+    checkboxEl.checked = toggleEl.checked;
+  }
+});
 
 formEl.addEventListener('submit', (event) => {
   event.preventDefault();

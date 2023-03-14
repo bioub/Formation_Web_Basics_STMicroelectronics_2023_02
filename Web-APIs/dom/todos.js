@@ -10,8 +10,8 @@ function createTodo(todo) {
   Exercice 1 :
   Compléter cette fonction de sorte à créer également
   la checkbox et le bouton comme dans le code HTML suivant :
-  <div data-todo-id="0.32452543">
-    <input type="checkbox">
+  <div class="todos-item" data-todo-id="0.32452543">
+    <input class="todos-completed" type="checkbox">
     <span>Item 1</span>
     <button>-</button>
   </div>
@@ -19,11 +19,25 @@ function createTodo(todo) {
   */
 
   const rowEl = document.createElement('div');
+  rowEl.className = 'todos-item';
   rowEl.dataset.todoId = todo.id;
+
+  const checkboxEl = document.createElement('input');
+  checkboxEl.type = 'checkbox';
+  checkboxEl.className = 'todos-completed';
+  checkboxEl.checked = todo.completed;
 
   const spanEl = document.createElement('span');
   spanEl.innerText = todo.title;
-  rowEl.append(spanEl);
+  // spanEl.contentEditable = 'true';
+
+  const inputEl = document.createElement('input');
+  inputEl.type = 'text';
+
+  const buttonEl = document.createElement('button');
+  buttonEl.innerText = '-';
+
+  rowEl.append(checkboxEl, ' ', spanEl, ' ', buttonEl);
 
   /*
   Exercice 4 :
@@ -33,6 +47,18 @@ function createTodo(todo) {
   Ecouter l'événement keydown de l'input
   si l'utilisateur tape sur ENTREE revenir à la balise span
   */
+  spanEl.addEventListener('dblclick', () => {
+    inputEl.value = spanEl.innerText;
+    spanEl.replaceWith(inputEl);
+    inputEl.select();
+  });
+
+  inputEl.addEventListener('keydown', (event) => {
+    if (event.code === 'Enter') {
+      spanEl.innerText = inputEl.value;
+      inputEl.replaceWith(spanEl);
+    }
+  });
 
   /*
   Exercice 2 :
@@ -40,6 +66,9 @@ function createTodo(todo) {
   Ecouter le clic de ce bouton et supprimer
   la ligne parent du bouton au clic
   */
+  buttonEl.addEventListener('click', () => {
+    rowEl.remove();
+  });
 
   return rowEl;
 }
