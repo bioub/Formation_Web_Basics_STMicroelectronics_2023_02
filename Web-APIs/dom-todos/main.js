@@ -20,7 +20,10 @@ const toggleEl = document.querySelector('.todos-toggle-checked');
 toggleEl.addEventListener('click', () => {
   // document.querySelectorAll('.todos-container input[type=checkbox]')
   /** @type {NodeListOf<HTMLInputElement>} */
-  const checkboxEls = document.querySelectorAll('.todos-completed');
+  const checkboxEls = divEl.querySelectorAll('.todos-completed');
+
+  // si besoin d'appeler .filter par exemple
+  // const checkboxArray = Array.from(checkboxEls);
 
   for (const checkboxEl of checkboxEls) {
     checkboxEl.checked = toggleEl.checked;
@@ -37,3 +40,4 @@ formEl.addEventListener('submit', (event) => {
 
   divEl.prepend(itemEl);
 });
+
