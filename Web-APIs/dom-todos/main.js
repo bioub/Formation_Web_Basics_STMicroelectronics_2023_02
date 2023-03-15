@@ -73,3 +73,20 @@ divEl.addEventListener('keydown', (event) => {
     target.replaceWith(createSpanValue(target.value));
   }
 });
+
+
+
+// Exercice 6
+// Utiliser l'API fetch pour récupérer les données
+// de https://jsonplaceholder.typicode.com/todos
+// et pour chaque élément du tableau répondu
+// appeler la fonction createTodoItem et insérer
+// dans divEl
+// limiter aux 20 première todos avec slice (Array)
+
+// Exercice 7
+// Utiliser localStorage pour stocker lors de la saisie
+// la valeur dans inputEl
+// de sorte à ce quand on quitte le navigateur et
+// qu'on revienne sur cette page la valeur s'affiche à
+// nouveau dans le champs

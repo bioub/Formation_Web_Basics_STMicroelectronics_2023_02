@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input class="input-adresse" type="text" placeholder="Adresse postale" >
+    <p>
+      Adresse la plus probable : <span class="output"></span>
+    </p>
+    <button class="btn-xhr">XMLHttpRequest</button>
+    <button class="btn-fetch">Fetch</button>
+  </div>
+  <script>
+    const btnXhrEl = document.querySelector('.btn-xhr');
+    const btnFetchEl = document.querySelector('.btn-fetch');
+    const inputEl = document.querySelector('.input-adresse');
+    const outputEl = document.querySelector('.output');
+
+    btnXhrEl.addEventListener('click', () => {
+      const adresse = encodeURIComponent(inputEl.value)
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', `https://api-adresse.data.gouv.fr/search/?q=${adresse}`);
+      xhr.addEventListener('load', () => {
+        const data = JSON.parse(xhr.response);
+        outputEl.innerText = data.features[0].properties.label;
+      });
+      xhr.send();
+    });
+
+    btnFetchEl.addEventListener('click', () => {
+      const adresse = encodeURIComponent(inputEl.value)
+      fetch(`https://api-adresse.data.gouv.fr/search/?q=${adresse}`)
+        .then((res) => res.json())
+        .then((data) => {
+          outputEl.innerText = data.features[0].properties.label;
+        });
+    });
+  </script>
+</body>
+</html>
