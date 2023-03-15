@@ -41,3 +41,7 @@ formEl.addEventListener('submit', (event) => {
   divEl.prepend(itemEl);
 });
 
+// Exercice 5
+// Grace à la phase de target
+// Ecouter le clic du bouton moins (ex2) ici
+// Ecouter les évenements keydown et dblclick (ex4) ici

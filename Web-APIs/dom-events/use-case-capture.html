@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .selected {
+      border: 1px solid black;
+      padding: 5px;
+    }
+
+    .menu {
+      border: 1px solid black;
+    }
+
+    .menu div {
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dropdown">
+    <div class="selected">Item 2</div>
+    <div class="menu" hidden>
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+    </div>
+  </div>
+  <script>
+    const dropdownEl = document.querySelector('.dropdown');
+    const menuEl = document.querySelector('.menu');
+
+    dropdownEl.addEventListener('click', () => {
+      menuEl.hidden = !menuEl.hidden;
+    });
+
+    window.addEventListener('click', () => {
+      menuEl.hidden = true;
+    }, { capture: true })
+  </script>
+</body>
+</html>

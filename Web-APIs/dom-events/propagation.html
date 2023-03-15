@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      div {
+        display: flex;
+        margin: auto;
+      }
+
+      .blue {
+        background-color: lightblue;
+        width: 80vmin;
+        height: 80vmin;
+      }
+
+      .green {
+        background-color: lightgreen;
+        width: 60vmin;
+        height: 60vmin;
+      }
+
+      .yellow {
+        background-color: lightyellow;
+        width: 40vmin;
+        height: 40vmin;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blue">
+      <div class="green">
+        <div class="yellow"></div>
+      </div>
+    </div>
+    <script>
+      const divEls = document.querySelectorAll('div');
+
+      for (const divEl of divEls) {
+        divEl.addEventListener('click', (event) => {
+          console.log('bubbling', divEl.className);
+          if (divEl.className === 'blue') {
+            event.stopPropagation();
+          }
+        });
+      }
+
+      document.body.addEventListener('click', (event) => {
+        console.log('bubbling', 'body 1');
+        // event.stopPropagation(); // empeche d'appeler le listener des ancetres
+        event.stopImmediatePropagation(); // empeche aussi d'appeler les autres listener du meme element + les ancetres
+      });
+
+      document.body.addEventListener('click', () => {
+        console.log('bubbling', 'body 2');
+      });
+
+      document.documentElement.addEventListener('click', () => {
+        console.log('bubbling', 'html');
+      });
+
+      document.addEventListener('click', (event) => {
+        console.log('bubbling', 'document');
+      });
+
+      // === globalThis
+      window.addEventListener('click', () => {
+        console.log('bubbling', 'window');
+      });
+
+      // Legacy (Phase de capture)
+      // for (const divEl of divEls) {
+      //   divEl.addEventListener('click', () => {
+      //     console.log('capture', divEl.className);
+      //   }, true);
+      // }
+
+      // for (const divEl of divEls) {
+      //   divEl.addEventListener('click', () => {
+      //     console.log('capture', divEl.className);
+      //   }, { capture: true });
+      // }
+    </script>
+  </body>
+</html>
