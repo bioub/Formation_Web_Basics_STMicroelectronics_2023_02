@@ -27,14 +27,14 @@ function createTodo(todo) {
   checkboxEl.className = 'todos-completed';
   checkboxEl.checked = todo.completed;
 
-  const spanEl = document.createElement('span');
-  spanEl.innerText = todo.title;
+  const spanEl = createSpanValue(todo.title);
   // spanEl.contentEditable = 'true';
 
-  const inputEl = document.createElement('input');
-  inputEl.type = 'text';
+  // const inputEl = document.createElement('input');
+  // inputEl.type = 'text';
 
   const buttonEl = document.createElement('button');
+  buttonEl.className = 'todos-delete-btn'
   buttonEl.innerText = '-';
 
   rowEl.append(checkboxEl, ' ', spanEl, ' ', buttonEl);
@@ -47,18 +47,18 @@ function createTodo(todo) {
   Ecouter l'événement keydown de l'input
   si l'utilisateur tape sur ENTREE revenir à la balise span
   */
-  spanEl.addEventListener('dblclick', () => {
-    inputEl.value = spanEl.innerText;
-    spanEl.replaceWith(inputEl);
-    inputEl.select();
-  });
+  // spanEl.addEventListener('dblclick', () => {
+  //   inputEl.value = spanEl.innerText;
+  //   spanEl.replaceWith(inputEl);
+  //   inputEl.select();
+  // });
 
-  inputEl.addEventListener('keydown', (event) => {
-    if (event.code === 'Enter') {
-      spanEl.innerText = inputEl.value;
-      inputEl.replaceWith(spanEl);
-    }
-  });
+  // inputEl.addEventListener('keydown', (event) => {
+  //   if (event.code === 'Enter') {
+  //     spanEl.innerText = inputEl.value;
+  //     inputEl.replaceWith(spanEl);
+  //   }
+  // });
 
   /*
   Exercice 2 :
@@ -66,9 +66,37 @@ function createTodo(todo) {
   Ecouter le clic de ce bouton et supprimer
   la ligne parent du bouton au clic
   */
-  buttonEl.addEventListener('click', () => {
-    rowEl.remove();
-  });
+  // buttonEl.addEventListener('click', () => {
+  //   rowEl.remove();
+  // });
 
   return rowEl;
+}
+
+/**
+ * @param {string} val
+ * @returns {HTMLSpanElement}
+ */
+function createSpanValue(val) {
+  const spanEl = document.createElement('span');
+  spanEl.className = 'todos-span-value';
+  spanEl.innerText = val;
+  return spanEl;
+}
+
+/**
+ * @param {string} val
+ * @returns {HTMLInputElement}
+ */
+function createInputValue(val) {
+  const inputEl = document.createElement('input');
+  inputEl.className = 'todos-input-value';
+  inputEl.value = val;
+  requestAnimationFrame(() => {
+    inputEl.select();
+  });
+  // setTimeout(() => {
+  //   inputEl.select();
+  // }, 0);
+  return inputEl;
 }

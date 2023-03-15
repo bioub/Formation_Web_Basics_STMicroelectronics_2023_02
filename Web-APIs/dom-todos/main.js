@@ -45,3 +45,31 @@ formEl.addEventListener('submit', (event) => {
 // Grace à la phase de target
 // Ecouter le clic du bouton moins (ex2) ici
 // Ecouter les évenements keydown et dblclick (ex4) ici
+divEl.addEventListener('click', (event) => {
+  /** @type {HTMLElement} */
+  const target = event.target;
+
+  if (target.classList.contains('todos-delete-btn')) {
+    target.closest('.todos-item').remove();
+  }
+});
+
+divEl.addEventListener('dblclick', (event) => {
+  /** @type {HTMLElement} */
+  const target = event.target;
+
+  if (target.classList.contains('todos-span-value')) {
+    const inputEl = createInputValue(target.innerText)
+    target.replaceWith(inputEl);
+    // inputEl.select();
+  }
+});
+
+divEl.addEventListener('keydown', (event) => {
+  /** @type {HTMLElement} */
+  const target = event.target;
+
+  if (target.classList.contains('todos-input-value') && event.code === 'Enter') {
+    target.replaceWith(createSpanValue(target.value));
+  }
+});
