@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      /* transition: transform 400ms ease; */
+    }
+
+    #box.final {
+      transform: translate(100px, 200px);
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+  <script>
+    const boxEl = document.querySelector('#box');
+
+    boxEl.addEventListener('click', () => {
+      // boxEl.classList.toggle('final');
+      // const x = Math.floor(Math.random() * 200);
+      // const y = Math.floor(Math.random() * 200);
+      // const transformValue = `translate(${x}px, ${y}px)`;
+      // boxEl.style.transform = transformValue;
+      requestAnimationFrame(step);
+    });
+
+    let debut = 0;
+
+    function step(timestamp) {
+      if (!debut) {
+        debut = timestamp;
+      }
+
+      const x = 200 * ((timestamp - debut) / 1000);
+      const y = 100 * ((timestamp - debut) / 1000);
+
+      boxEl.style.transform = `translate(${x}px, ${y}px)`;
+
+      if (timestamp - debut < 1000) {
+        requestAnimationFrame(step);
+      }
+
+    }
+  </script>
+</body>
+</html>

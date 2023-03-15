@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      border: 1px solid black;
+    }
+
+    .popover {
+      width: 100px;
+      height: 20px;
+      background-color: yellow;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <div class="popover"></div>
+  <script>
+    const popoverEl = document.querySelector('.popover');
+    const ulEl = document.querySelector('ul');
+
+    ulEl.addEventListener('mouseover', (event) => {
+      if (event.target.nodeName === 'LI') {
+        const dimensionsUl = event.target.getBoundingClientRect();
+        // console.log(dimensionsUl);
+        popoverEl.style.top = dimensionsUl.top + dimensionsUl.height + 'px';
+        popoverEl.style.left = dimensionsUl.left + (dimensionsUl.width / 2) - 50 + 'px';
+      }
+    });
+  </script>
+</body>
+</html>
