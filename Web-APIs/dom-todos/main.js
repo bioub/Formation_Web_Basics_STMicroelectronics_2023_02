@@ -80,9 +80,17 @@ divEl.addEventListener('keydown', (event) => {
 // Utiliser l'API fetch pour récupérer les données
 // de https://jsonplaceholder.typicode.com/todos
 // et pour chaque élément du tableau répondu
-// appeler la fonction createTodoItem et insérer
+// appeler la fonction createTodo et insérer
 // dans divEl
-// limiter aux 20 première todos avec slice (Array)
+// limiter aux 20 premières todos avec slice (Array)
+fetch('https://jsonplaceholder.typicode.com/todos')
+  .then((res) => res.json())
+  .then((todos) => {
+    for (const todo of todos.slice(0, 20)) {
+      const itemEl = createTodo(todo);
+      divEl.append(itemEl);
+    }
+  });
 
 // Exercice 7
 // Utiliser localStorage pour stocker lors de la saisie
@@ -90,3 +98,10 @@ divEl.addEventListener('keydown', (event) => {
 // de sorte à ce quand on quitte le navigateur et
 // qu'on revienne sur cette page la valeur s'affiche à
 // nouveau dans le champs
+inputEl.addEventListener('input', () => {
+  localStorage.setItem('new-todo', inputEl.value);
+});
+
+if (localStorage.getItem('new-todo')) {
+  inputEl.value = localStorage.getItem('new-todo');
+}

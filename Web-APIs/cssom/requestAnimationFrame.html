@@ -34,17 +34,17 @@
 
     let debut = 0;
 
-    function step(timestamp) {
+    function step(uptime) {
       if (!debut) {
-        debut = timestamp;
+        debut = uptime;
       }
 
-      const x = 200 * ((timestamp - debut) / 1000);
-      const y = 100 * ((timestamp - debut) / 1000);
+      const x = 200 * ((uptime - debut) / 1000);
+      const y = 100 * ((uptime - debut) / 1000);
 
       boxEl.style.transform = `translate(${x}px, ${y}px)`;
 
-      if (timestamp - debut < 1000) {
+      if (uptime - debut < 1000) {
         requestAnimationFrame(step);
       }
 
