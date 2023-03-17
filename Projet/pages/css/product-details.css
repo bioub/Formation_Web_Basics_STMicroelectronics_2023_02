@@ -1,28 +1,28 @@
-.phone-image {
+#product-details .phone-image {
   width: 450px;
   height: 450px;
   float: left;
 }
 
 @media (max-width: 768px) {
-  .phone-image {
+  #product-details .phone-image {
     display: none;
   }
 }
 
-.phone-thumbs {
+#product-details .phone-thumbs {
   list-style: none;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
 }
 
-.phone-thumbs img {
+#product-details .phone-thumbs img {
   width: 100%;
   height: 100%;
 }
 
-.phone-thumbs li {
+#product-details .phone-thumbs li {
   width: 100px;
   height: 100px;
   background-color: white;
@@ -33,7 +33,7 @@
 }
 
 @media (max-width: 768px) {
-  .phone-thumbs li {
+  #product-details .phone-thumbs li {
     width: 100%;
     height: auto;
     margin: 0 0 1em 0;
