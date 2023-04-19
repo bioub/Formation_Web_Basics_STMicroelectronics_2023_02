@@ -20,7 +20,8 @@ function getRandomIntInclusive(min, max) {
 
 
 // importe l'API readline de Node.js
-const readline = require('readline');
+const readline = require('node:readline');
+const process = require('node:process');
 
 // configure où lire la ligne
 const rl = readline.createInterface({
@@ -61,14 +62,17 @@ function jouer() {
   });
 }
 
-const entierAlea = getRandomInt(0, 100);
-const essais = [];
-jouer();
+try {
+  const entierAlea = getRandomInt(0, 100);
+  const essais = [];
+  jouer();
+} catch (error) {
 
+}
 
 // pile d'appel
 // ^
-// |                                    [question]                  [question]
-// |[question]                          [jouer   ]                  [jouer   ]
-// |[jouer   ]  ..⟳..                   [=>      ]  ..⟳..           [=>      ]
-// +------------------------------------ENTREE-----------------------ENTREE----------------------------------------------------------------> temps
+// |                                           [question]                  [question]
+// |      [question]                           [jouer   ]                  [jouer   ]
+// |try { [jouer   ] } ..⟳..                   [=>      ]  ..⟳..           [=>      ]
+// +-------------------------------------------ENTREE-----------------------ENTREE----------------------------------------------------------------> temps
